@@ -24,6 +24,9 @@ module.exports = {
     extend: {
       colors: {
         'primary-purple' : '#432880',
+        'primary2-purple': '#432874',
+        'hr-color' : '#6f42c1',
+        'purply' : '#271b3d',
       },
     },
   },

@@ -7,9 +7,16 @@ import { MdPersonOutline } from "react-icons/md";
 import Logo from "../assets/logo.png";
 import Coin from "../assets/coin.svg";
 import Diamond from "../assets/diamond.svg";
-import Logo2 from '../assets/logo2.png'
+import Logo2 from "../assets/logo2.png";
+import Nav from "./Nav";
 
-function Navbar() {
+const Navbar = () => {
+  const [showMyNav, setShowMyNav] = React.useState(false);
+
+  const handleNav = () => {
+    setShowMyNav(!showMyNav);
+  };
+
   return (
     <div className="w-screen h-[4rem] bg-primary-purple flex justify-around ">
       <div className="flex justify-between h-[100%] w-[95%]">
@@ -19,11 +26,19 @@ function Navbar() {
           className="absolute right-0 z-0 bg-cover"
         />
         <div className="flex justify-start items-center w-[30%] lg:hidden">
-          <AiOutlineMenu size={"2rem"} className="text-white" />
+          <AiOutlineMenu
+            size={"2rem"}
+            className="text-white"
+            onClick={handleNav}
+          />
         </div>
         <div className="flex justify-center items-center lg:gap-8">
           <img src={Logo} alt="logo" className=" w-[2rem] xl:hidden" />
-          <img className="hidden xl:block w-[9rem]  bg-white justify-start" src={Logo2} alt="" />
+          <img
+            className="hidden xl:block w-[9rem]  bg-white justify-start"
+            src={Logo2}
+            alt=""
+          />
           <span className="hidden lg:block text-xl text-white">Tasks</span>
           <span className="hidden lg:block text-xl text-white">Inventory</span>
           <span className="hidden lg:block text-xl text-white">Shops</span>
@@ -34,24 +49,29 @@ function Navbar() {
           <span className="hidden lg:block text-xl text-white">Help</span>
         </div>
         <div className="z-10 flex justify-end items-center gap-4 w-[30%] ">
-          <div className="hidden  lg:flex  justify-start w-[35%] gap-3
-          ">
-          <img
-            className="hidden lg:block w-[2rem]"
-            src={Diamond}
-            alt="diamond"
-          />
-          <span className="text-white">0</span>
-          <img className="hidden lg:block w-[2rem]" src={Coin} alt="coin" />
-          <span className="text-white">0</span>
+          <div
+            className="hidden  lg:flex  justify-start w-[35%] gap-3
+          "
+          >
+            <img
+              className="hidden lg:block w-[2rem]"
+              src={Diamond}
+              alt="diamond"
+            />
+            <span className="text-white">0</span>
+            <img className="hidden lg:block w-[2rem]" src={Coin} alt="coin" />
+            <span className="text-white">0</span>
           </div>
           <AiOutlineReload size={"2rem"} className="text-white" />
           <BiMessageDetail size={"2rem"} className="text-white" />
           <MdPersonOutline size={"2rem"} className="text-white" />
         </div>
       </div>
+      <div className="absolute mt-[4rem] z-10">{showMyNav && < Nav />}</div>
     </div>
+    
+    
   );
-}
+};
 
 export default Navbar;

@@ -1,13 +1,12 @@
 import Navbar from "./components/Navbar"
-import Nav from './components/Nav'
-
+import Avatar from "./components/Avatar"
 function App() {
   
 
   return (
     <div>
      <Navbar />
-     < Nav />
+     <Avatar/>
     </div>
   )
 }
