@@ -27,6 +27,7 @@ module.exports = {
         'primary2-purple': '#432874',
         'hr-color' : '#6f42c1',
         'purply' : '#271b3d',
+        'second-purple' : '#36205d',
       },
     },
   },
